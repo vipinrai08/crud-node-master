@@ -1,0 +1,26 @@
+<h1>Node crud master</h1>
+
+<% if(existemPosts) { %>
+  <h3>Existing Users</h3>
+  <table>
+  	<tr>
+  		<th>Name</th>
+  		<th>Age</th>
+  		<th>Actions</th>
+  	</tr>
+  	<% for(i in posts) { %>
+	  	<tr>
+	  		<td><%=posts[i].user_name%></td>
+	  		<td><%=posts[i].age%></td>
+	  		<td>
+          <a href="/editpost/<%=posts[i]._id.toHexString()%>">edit</a>
+          <a href="/deletepost/<%=posts[i]._id.toHexString()%>" onclick="javascript:return confirm('Are you sure to delete user ?');">delete</a>
+        </td>
+	  	</tr>
+  	<% } %>
+  </table>
+<% } else { %>
+  <p>oop's no such user found.
+<% }%>
+
+<p>Click here to : <a href="/newpost">add user</a></p>

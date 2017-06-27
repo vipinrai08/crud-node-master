@@ -1,0 +1,11 @@
+<h1>Editar post</h1>
+<form action="/editpost" method="post">
+<dl>
+	<input type="hidden" name="objid" value="<%=posts._id%>"/>
+	<dt>Name</dt>
+	<dd><input type="text" name="uname" value="<%=posts.user_name%>" /></dd>
+	<dt>Age</dt>
+	<dd><input type="text" name="age" value="<%=posts.age%>" /></dd>
+	<dd><p><input type="submit" name="submit" /></p></dd>
+</dl>
+</form>
